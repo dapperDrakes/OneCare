@@ -4,7 +4,11 @@ A unified care-management system.
 
 ##  Contents
 
+<<<<<<< HEAD
   * [Filetree](#filetree)
+=======
+  * Filetree(#filetree)
+>>>>>>> 4d58e74a16c56449986961291d791472257baa44
 
 ##  Filetree
 
@@ -19,5 +23,10 @@ A unified care-management system.
 
  * server -- 
    All files pertaining to the server and back-end are placed here.
+<<<<<<< HEAD
  * db -- 
    All schemas and database-related files go here.
+=======
+ * db
+   All schemas and database-related files go here.
+>>>>>>> 4d58e74a16c56449986961291d791472257baa44
