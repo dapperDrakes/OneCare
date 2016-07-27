@@ -1,0 +1,24 @@
+{
+  "name": "OneCare",
+  "version": "1.0.0",
+  "description": "one place to manage all of your healthcare needs",
+  "engines": {
+    "node": "4.1.1"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan, Harish, Ian, Kenton",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "latest",
+    "body-parser": "^1.5.2",
+    "bootstrap": "^3.3.6",
+    "express": "^4.14.0",
+    "jquery": "1.9.1",
+    "jwt-simple": "^0.2.0",
+    "mongodb": "^2.2.1",
+    "mongoose": "^4.5.3"
+  }
+}
