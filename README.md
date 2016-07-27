@@ -8,16 +8,16 @@ A unified care-management system.
 
 ##  Filetree
 
- * public
+ * public -- 
    All files served to the front end are placed in public.  
-   * assets
+   * assets -- 
      This directory is for statically-served assets.  All of your .jpg, .png, etc. go here.
-   * styles
+   * styles -- 
      All CSS and stylesheets go here.
-   * views
+   * views -- 
      This folder is for templates and/or html/jsx files.
 
- * server
+ * server -- 
    All files pertaining to the server and back-end are placed here.
- * db
+ * db -- 
    All schemas and database-related files go here.
