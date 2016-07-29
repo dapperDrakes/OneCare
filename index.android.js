@@ -17,8 +17,9 @@ class OneCare extends Component {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to One Care!
+          Welcome to the Thunder Dome!
         </Text>
+        
         <Text style={styles.instructions}>
           To get started, edit index.android.js
         </Text>
