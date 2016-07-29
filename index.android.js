@@ -9,11 +9,8 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
-  ScrollView,
-  Navigator
+  View
 } from 'react-native';
-
 import SymptomEntry from './symptomEntry';
 
 class OneCare extends Component {
@@ -49,28 +46,24 @@ class OneCare extends Component {
   }
   render() {
     return (
-      <Navigator
-        initialRoute={{ title: 'SymptomEntry Scene', index: 0 }}
-        renderScene={(route, navigator) => {
-          <View>
-            <SymptomEntry title={route.title} />
-            <Text style={styles.welcome}>
-              Welcome to One Care!
-            </Text>
-            <Text style={styles.instructions}>
-              To get started, edit index.android.js
-            </Text>
-            <Text style={styles.instructions}>
-              Double tap R on your keyboard to reload,{'\n'}
-              Shake or press menu button for dev menu
-            </Text>
-          </View>
-        }}/>
+      <View style={styles.container}>
+        <SymptomEntry />
+        <Text style={styles.welcome}>
+          Welcome to OneCare!
+        </Text>
+        <Text> {this.state.text}</Text>
+
+        <Text style={styles.instructions}>
+          To get started, edit index.android.js
+        </Text>
+        <Text style={styles.instructions}>
+          Double tap R on your keyboard to reload,{'\n'}
+          Shake or press menu button for dev menu
+        </Text>
+      </View>
     );
   }
 }
-        /*// <View style={styles.container}>
-        // </View>*/
 
 const styles = StyleSheet.create({
   container: {
