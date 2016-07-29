@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import doctorEntryView from './views/doctorEntryView.jsx'
+
 class OneCare extends Component {
   render() {
     return (
@@ -19,7 +21,7 @@ class OneCare extends Component {
         <Text style={styles.welcome}>
           Welcome to the Thunder Dome!
         </Text>
-        
+        <DoctorEntryView />
         <Text style={styles.instructions}>
           To get started, edit index.android.js
         </Text>
