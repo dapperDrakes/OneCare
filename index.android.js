@@ -16,7 +16,7 @@ class OneCare extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      "ip": "10.224.144.22:3000", // REPLACE WITH YOUR OWN IP ADDRESS (everything before :3000)!
+      "ip": "localhost:3000", // REPLACE WITH YOUR OWN IP ADDRESS (everything before :3000)!
       "text": "before API Call"};
   }
   fuckDan() {
