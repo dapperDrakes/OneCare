@@ -9,8 +9,12 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView,
+  Navigator
 } from 'react-native';
+
+import SymptomEntry from './symptomEntry';
 
 class OneCare extends Component {
   constructor(props) {
@@ -61,7 +65,7 @@ class OneCare extends Component {
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {
