@@ -1,0 +1,22 @@
+{
+  "name": "OneCare",
+  "version": "0.0.1",
+  "description": "one place to manage all of your healthcare needs",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start"
+  },
+  "dependencies": {
+    "bcrypt": "latest",
+    "body-parser": "^1.5.2",
+    "bootstrap": "^3.3.6",
+    "express": "^4.14.0",
+    "jquery": "1.9.1",
+    "jwt-simple": "^0.2.0",
+    "mongodb": "^2.2.1",
+    "mongoose": "^4.5.3",
+    "react": "15.2.1",
+    "react-native": "0.30.0",
+    "react-native-fbsdk": "^0.3.0"
+  }
+}
