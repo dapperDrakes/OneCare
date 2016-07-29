@@ -11,6 +11,7 @@ import {
   Text,
   View
 } from 'react-native';
+import SymptomEntry from './symptomEntry';
 
 class OneCare extends Component {
   constructor(props) {
@@ -46,6 +47,7 @@ class OneCare extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <SymptomEntry />
         <Text style={styles.welcome}>
           Welcome to OneCare!
         </Text>
