@@ -15,6 +15,36 @@ import {
 import doctorEntryView from './views/doctorEntryView.jsx'
 
 class OneCare extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      "ip": "localhost:3000", // REPLACE WITH YOUR OWN IP ADDRESS (everything before :3000)!
+      "text": "before API Call"};
+  }
+  fuckDan() {
+    var obj = {
+      method: 'GET',
+      body: null,
+      headers: {
+        'Content-Type': 'application/json',
+      }
+    }
+    fetch('http://'+ this.state.ip + '/fuckDan', obj)
+    .then(function(res) {
+      return res.json();
+     })
+     .then(function(parsed){
+       this.setState({"text": parsed.message});
+     }.bind(this))
+    .catch(function(err){
+      console.log("data not fetched", err);
+    })
+
+  }
+  componentDidMount() {
+    console.log("component has mounted");
+    this.fuckDan();
+  }
   render() {
     return (
       <View style={styles.container}>
