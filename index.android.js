@@ -49,22 +49,6 @@ class OneCare extends Component {
   }
   render() {
     return (
-<<<<<<< 05ae50892fc0ff187a9886b8495d3e14ceff14e9
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to OneCare!
-        </Text>
-        <Text> {this.state.text}</Text>
-
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
-=======
       <Navigator
         initialRoute={{ title: 'SymptomEntry Scene', index: 0 }}
         renderScene={(route, navigator) => {
@@ -82,8 +66,6 @@ class OneCare extends Component {
             </Text>
           </View>
         }}/>
-
->>>>>>> got scene to render
     );
   }
 }
