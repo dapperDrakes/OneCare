@@ -14,7 +14,6 @@ import {
   Navigator,
   TouchableOpacity
 } from 'react-native';
-import SymptomEntry from './symptomEntry';
 
 import SymptomEntry from './symptomEntry';
 import SplashPage from './splashPage';
