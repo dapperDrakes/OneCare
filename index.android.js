@@ -9,6 +9,7 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import DoctorEntry from './doctorEntry'
 import SymptomEntry from './symptomEntry';
 import SplashPage from './splashPage';
 import LoginPage from './loginPage';
@@ -96,6 +97,11 @@ class OneCare extends Component {
       return (
         <SymptomEntry navigator={navigator} />
       );
+    }
+    if (routeId === 'DoctorEntry') {
+      return (
+        <DoctorEntry navigator={navigator} />
+      )
     }
 
     return this.noRoute(navigator);
