@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["vhygx"]); }
+
+__d('UnicodeBidiService',['invariant','UnicodeBidi','UnicodeBidiDirection'],function a(b,c,d,e,f,g,h){'use strict';if(c.__markCompiled)c.__markCompiled();function i(j){if(!j){j=c('UnicodeBidiDirection').getGlobalDir();}else !c('UnicodeBidiDirection').isStrong(j)?h(0):void 0;this.$UnicodeBidiService1=j;this.reset();}i.prototype.reset=function(){this.$UnicodeBidiService2=this.$UnicodeBidiService1;};i.prototype.getDirection=function(j){this.$UnicodeBidiService2=c('UnicodeBidi').getDirection(j,this.$UnicodeBidiService2);return this.$UnicodeBidiService2;};f.exports=i;},null);

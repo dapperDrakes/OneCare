@@ -14,7 +14,7 @@ export default class DoctorEntryView extends Component {
   render() {
     return (
       <View>
-        {this.props.title}
+        <Text>{this.props.title}</Text>
       </View>
     )
   }

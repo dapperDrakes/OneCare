@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["BQG6C"]); }
+
+__d('UnicodeBidiDirectionCore',['invariant'],function a(b,c,d,e,f,g,h){'use strict';if(c.__markCompiled)c.__markCompiled();var i='NEUTRAL',j='LTR',k='RTL',l=null;function m(t){return t===j||t===k;}function n(t){!m(t)?h(0):void 0;return t===j?'ltr':'rtl';}function o(t,u){!m(t)?h(0):void 0;!m(u)?h(0):void 0;return t===u?null:n(t);}function p(t){l=t;}function q(){p(j);}function r(){if(!l)this.initGlobalDir();!l?h(0):void 0;return l;}var s={NEUTRAL:i,LTR:j,RTL:k,isStrong:m,getHTMLDir:n,getHTMLDirIfDifferent:o,setGlobalDir:p,initGlobalDir:q,getGlobalDir:r};f.exports=s;},null);
