@@ -50,7 +50,7 @@ class OneCare extends Component {
     // This will load splashPage.js on initialize
     return (
       <Navigator
-        initialRoute={{id: 'SplashPage', name: 'Index'}}
+        initialRoute={{id: 'DoctorEntry', name: 'DoctorEntry'}}
         renderScene={this.renderScene.bind(this)}
         configureScene={(route) => {
           if (route.sceneConfig) {
