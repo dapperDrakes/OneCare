@@ -42,12 +42,42 @@ class OneCare extends Component {
     })
 
   }
-  componentDidMount() {
+
+
+  // apiGET() {
+  //   console.log("APIGET has been called")
+  //   fetch("https://api.github.com/users/kentonlin", {method: "GET", body: null, headers: {'accept': 'application/vnd.github.v3+json'}})
+  //   .then(function(res){
+  //     console.log("RES", res);
+  //     return res;
+  //   })
+  //   .then((responseData) => {
+  //     console.log("Search Query -> +++++++++++++++++++++++ " + responseData)
+  //   })
+  //   .catch(function(err){
+  //     console.log("This didn't work because", err);
+  //   })
+  // }
+componentDidMount() {
     console.log("component has mounted");
     this.fuckDan();
+    // this.apiGET();
   }
+
+  onPressButtonGET () {
+        fetch("https://api.github.com/users/kentonlin", {method: "GET"})
+        .then((response) => response.json())
+        .then((responseData) => {
+          Alert.alert(
+          "GET Response",
+          "Search Query -> " + responseData
+          )
+           console.log("Search Query -> " + responseData)
+        })
+        .done();
+    }
+
   render() {
-    // This will load splashPage.js on initialize
     return (
       <Navigator
         initialRoute={{id: 'MainPage', name: 'MainPage'}}
@@ -119,12 +149,30 @@ class OneCare extends Component {
   }
 };
 
+class UserTextInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: 'Please enter your name' };
+  }
+
+  render() {
+    return (
+      <TextInput 
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={(text) => this.setState({text})}
+        value={this.state.text}
+      />
+    );
+  }
+}
+
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#ff8080',
   },
   welcome: {
     fontSize: 20,
@@ -139,3 +187,4 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('OneCare', () => OneCare);
+AppRegistry.registerComponent('AwesomeProject', () => UselessTextInput);
