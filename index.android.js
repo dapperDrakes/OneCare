@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import DoctorEntryView from './views/doctorEntryView';
+import DoctorEntry from './doctorEntry';
 
 class OneCare extends Component {
   constructor(props) {
@@ -48,7 +48,7 @@ class OneCare extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <DoctorEntryView />
+        <DoctorEntry />
         <Text style={styles.welcome}>
           Welcome to the Thunder Dome!
         </Text>
