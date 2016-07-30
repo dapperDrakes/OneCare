@@ -77,7 +77,6 @@ componentDidMount() {
     }
 
   render() {
-    // This will load splashPage.js on initialize
     return (
       <Navigator
         initialRoute={{id: 'SplashPage', name: 'Index'}}
