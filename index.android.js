@@ -9,9 +9,15 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  ScrollView,
+  Navigator,
+  TouchableOpacity
 } from 'react-native';
 import SymptomEntry from './symptomEntry';
+
+import SymptomEntry from './symptomEntry';
+import SplashPage from './splashPage';
 
 class OneCare extends Component {
   constructor(props) {
@@ -46,24 +52,59 @@ class OneCare extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <SymptomEntry />
-        <Text style={styles.welcome}>
-          Welcome to OneCare!
-        </Text>
-        <Text> {this.state.text}</Text>
+      <Navigator
+        initialRoute={{id: 'SplashPage', name: 'Index'}}
+        renderScene={this.renderScene.bind(this)}
+        configureScene={(route) => {
+          if (route.sceneConfig) {
+            return route.sceneConfig;
+          }
+          return Navigator.SceneConfigs.FloatFromRight;
+        }} />
+      // <View style={styles.container}>
+      //   <SymptomEntry style={styles.welcome}/>
+      //   <Text style={styles.welcome}>
+      //     Welcome to OneCare!
+      //   </Text>
+      //   <Text> {this.state.text}</Text>
 
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      //   <Text style={styles.instructions}>
+      //     To get started, edit index.android.js
+      //   </Text>
+      //   <Text style={styles.instructions}>
+      //     Double tap R on your keyboard to reload,{'\n'}
+      //     Shake or press menu button for dev menu
+      //   </Text>
+      // </View>
+    );
+  }
+
+  renderScene(route, navigator) {
+    var routeId = route.id;
+    if (routeId === 'SplashPage') {
+      return (
+        <SplashPage navigator={navigator} />
+      );
+    }
+    if (routeId === 'SymptomEntry') {
+      return (
+        <SymptomEntry navigator={navigator} />
+      );
+    }
+    return this.noRoute(navigator);
+  }
+
+  noRoute(navigator) {
+    return (
+      <View style={{flex: 1, alignItems: 'stretch', justifyContent: 'center'}}>
+        <TouchableOpacity style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
+          onPress={() => navigator.pop()}>
+          <Text style={{color: 'red', fontWeight: 'bold'}}>请在 index.js 的 renderScene 中配置这个页面的路由</Text>
+        </TouchableOpacity>
       </View>
     );
   }
-}
+};
 
 const styles = StyleSheet.create({
   container: {

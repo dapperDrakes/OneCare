@@ -16,15 +16,13 @@ import {
 
 export default class SymptomEntry extends Component {
   static defaultProps = {
-    // return {
-      title: 'SymptomEntry'
-    // };
+    title: 'SymptomEntry'
   }
 
   render() {
     return (
       <ScrollView>
-        <Text style={styles.welcome}>This is the {this.props.title} page</Text>
+        <Text style={{fontSize: 50}}>This is the {this.props.title} page</Text>
       </ScrollView>
     );
   }
