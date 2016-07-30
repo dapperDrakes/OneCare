@@ -44,9 +44,26 @@ class OneCare extends Component {
     })
 
   }
-  componentDidMount() {
+
+
+  // apiGET() {
+  //   console.log("APIGET has been called")
+  //   fetch("https://api.github.com/users/kentonlin", {method: "GET", body: null, headers: {'accept': 'application/vnd.github.v3+json'}})
+  //   .then(function(res){
+  //     console.log("RES", res);
+  //     return res;
+  //   })
+  //   .then((responseData) => {
+  //     console.log("Search Query -> +++++++++++++++++++++++ " + responseData)
+  //   })
+  //   .catch(function(err){
+  //     console.log("This didn't work because", err);
+  //   })
+  // }
+componentDidMount() {
     console.log("component has mounted");
     this.fuckDan();
+    // this.apiGET();
   }
 
   onPressButtonGET () {
@@ -86,7 +103,6 @@ class OneCare extends Component {
 
       <UserTextInput/>
 
-        <text> {this.onPressButtonGET()} </text>
       </View>
     );
   }
