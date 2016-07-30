@@ -3,18 +3,10 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-<<<<<<< 58c1ff5f1bf7995d6a8153dbb6bf76cfb1af79b9
   View,
   ScrollView,
   Navigator,
   TouchableOpacity
-=======
-
-  Image,
-  TextInput, 
-
-  View
->>>>>>> merge
 } from 'react-native';
 
 import SymptomEntry from './symptomEntry';
@@ -68,13 +60,6 @@ class OneCare extends Component {
     }
 
   render() {
-<<<<<<< 58c1ff5f1bf7995d6a8153dbb6bf76cfb1af79b9
-    // This will load splashPage.js on initialize
-=======
-    let pic = {
-      uri: 'http://www.rxyoursite.com/assets/img/rx-logo.png'
-    }; 
->>>>>>> merge
     return (
       <Navigator
         initialRoute={{id: 'SplashPage', name: 'Index'}}
@@ -126,7 +111,6 @@ class OneCare extends Component {
       );
     }
 
-<<<<<<< 58c1ff5f1bf7995d6a8153dbb6bf76cfb1af79b9
     return this.noRoute(navigator);
   }
 
@@ -137,21 +121,6 @@ class OneCare extends Component {
           onPress={() => navigator.pop()}>
           <Text style={{color: 'red', fontWeight: 'bold'}}>请在 index.js 的 renderScene 中配置这个页面的路由</Text>
         </TouchableOpacity>
-=======
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-
-        <Image source={pic} style={{width: 193, height: 110}}/>
-
-      <UserTextInput/>
-
-        <text> {this.onPressButtonGET()} </text>
->>>>>>> merge
       </View>
     );
   }
