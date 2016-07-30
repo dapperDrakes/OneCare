@@ -6,7 +6,7 @@ mongoose.connect('mongodb://onecare:onecare1>@ds031925.mlab.com:31925/onecare');
 // USER SCHEMA 
 
 var scriptSchema = new Schema({
-	name: String, // name of drug
+	name: String, // name of drug // maybe better to concat both the name and dosage for more specific lookup // 
 	dosage: String, // dosage ex. 30mg
 	frequency: Number, // number of times in day,week,etc.
 	recur: String, // this refers to whether: daily,weekly, monthly 
