@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
@@ -17,6 +11,8 @@ import {
 
 import SymptomEntry from './symptomEntry';
 import SplashPage from './splashPage';
+import LoginPage from './loginPage';
+import MainPage from './mainPage';
 
 class OneCare extends Component {
   constructor(props) {
@@ -50,6 +46,7 @@ class OneCare extends Component {
     this.fuckDan();
   }
   render() {
+    // This will load splashPage.js on initialize
     return (
       <Navigator
         initialRoute={{id: 'SplashPage', name: 'Index'}}
@@ -77,7 +74,7 @@ class OneCare extends Component {
       // </View>
     );
   }
-
+  // Navigator will load each page based on routeId
   renderScene(route, navigator) {
     var routeId = route.id;
     if (routeId === 'SplashPage') {
@@ -85,11 +82,22 @@ class OneCare extends Component {
         <SplashPage navigator={navigator} />
       );
     }
+    if (routeId === 'LoginPage') {
+      return (
+        <LoginPage navigator={navigator} />
+      );
+    }
+    if (routeId === 'MainPage') {
+      return (
+        <MainPage navigator={navigator} />
+      );
+    }
     if (routeId === 'SymptomEntry') {
       return (
         <SymptomEntry navigator={navigator} />
       );
     }
+
     return this.noRoute(navigator);
   }
 

@@ -8,13 +8,14 @@ import {
   TouchableOpacity
 } from 'react-native';
 
-export default class LoginPage extends Component {
+export default class MainPage extends Component {
   render() {
     return (
       <Navigator
         renderScene={this.renderScene.bind(this)}
+        navigator={this.props.navigator}
         navigationBar={
-          <Navigator.NavigationBar style={{backgroundColor: '#246dd5', alignItems: 'center'}}
+          <Navigator.NavigationBar style={{backgroundColor: '#246dd5'}}
             routeMapper={NavigationBarRouteMapper} />
         } />
     );
@@ -23,25 +24,30 @@ export default class LoginPage extends Component {
   renderScene(route, navigator) {
     return (
       <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <TouchableHighlight
-          onPress={this.gotoNext.bind(this)}>
-          <Text style={{color: 'red'}}>Next Page</Text>
+        <TouchableHighlight style={{backgroundColor: 'yellow', padding: 10}}
+          onPress={this.gotoSymptomEntryPage.bind(this)}>
+          <Text style={{backgroundColor: 'yellow', color: 'green'}}>Enter Symptoms</Text>
         </TouchableHighlight>
       </View>
     );
   }
 
-  gotoNext() {
+  gotoSymptomEntryPage() {
     this.props.navigator.push({
-      id: 'MainPage',
-      name: 'MainPage'
+      id: 'SymptomEntry',
+      name: 'SymptomEntry'
     });
   }
 }
 
 var NavigationBarRouteMapper = {
   LeftButton(route, navigator, index, navState) {
-    return null;
+    return (
+      <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}
+        onPress={() => navigator.parentNavigator.pop()}>
+        <Text style={{color: 'white', margin: 10}}>Go Back</Text>
+      </TouchableOpacity>
+    );
   },
   RightButton(route, navigator, index, navState) {
     return null;
@@ -49,7 +55,7 @@ var NavigationBarRouteMapper = {
   Title(route, navigator, index, navState) {
     return (
       <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}>
-        <Text style={{color: 'white', margin: 10, fontSize: 16}}>Login</Text>
+        <Text style={{color: 'white', margin: 10, fontSize: 16}}>Main Page</Text>
       </TouchableOpacity>
     );
   }
