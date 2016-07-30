@@ -17,34 +17,15 @@ import {
 export default class SymptomEntry extends Component {
   static defaultProps = {
     // return {
-      title: 'SymptomEntry'
+      title: 'FUCK YOU HARISH'
     // };
   }
 
   render() {
     return (
       <ScrollView>
-        <Text style={styles.welcome}>This is the {this.props.title} page</Text>
+        <Text style={{fontSize: 50}}>This is the {this.props.title} page</Text>
       </ScrollView>
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
