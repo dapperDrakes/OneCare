@@ -1,50 +1,84 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
   View,
-  ScrollView
+  Text,
+  Navigator,
+  ScrollView,
+  TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
 
 export default class SymptomEntry extends Component {
   static defaultProps = {
-    // return {
-      title: 'SymptomEntry'
-    // };
+    title: 'SymptomEntry'
   }
 
   render() {
     return (
-      <ScrollView>
-        <Text style={styles.welcome}>This is the {this.props.title} page</Text>
-      </ScrollView>
+      <Navigator
+        renderScene={this.renderScene.bind(this)}
+        navigator={this.props.navigator}
+        navigationBar={
+          <Navigator.NavigationBar style={{backgroundColor: '#246dd5'}}
+            routeMapper={NavigationBarRouteMapper} />
+        } />
     );
   }
+
+    renderScene(route, navigator) {
+      return (
+        // <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <ScrollView>
+          <Text style={{fontSize: 150, backgroundColor: '#48E521'}}>This is the {this.props.title} page</Text>
+        </ScrollView>
+
+          // <TouchableHighlight style={{backgroundColor: 'yellow', padding: 10}}
+          //   onPress={this.gotoDoctorEntryPage.bind(this)}>
+          //   <Text style={{backgroundColor: 'yellow', color: 'green'}}>Enter Doctors</Text>
+          // </TouchableHighlight>
+        // </View>
+      );
+    }
+
+  //   gotoDoctorEntryPage() {
+  //     this.props.navigator.push({
+  //       id: 'DoctorEntry',
+  //       name: 'DoctorEntry'
+  //     });
+  //   }
+  // }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+var NavigationBarRouteMapper   = {
+  LeftButton(route, navigator, index, navState) {
+    return (
+      <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}
+        onPress={() => navigator.parentNavigator.pop()}>
+        <Text style={{color: 'white', margin: 10}}>Go Back</Text>
+      </TouchableOpacity>
+    );
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
+  RightButton(route, navigator, index, navState) {
+    return null;
   },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+  Title(route, navigator, index, navState) {
+    return (
+      <TouchableOpacity style={{flex: 1, justifyContent: 'center'}}>
+        <Text style={{color: 'white', margin: 10, fontSize: 16}}>Main Page</Text>
+      </TouchableOpacity>
+    );
+  }
+  // static defaultProps = {
+  //     title: 'SymptomEntry'
+  // }
+
+  // render() {
+  //   return (
+  //     <ScrollView>
+  //       <Text style={{fontSize: 50}}>This is the {this.props.title} page</Text>
+  //     </ScrollView>
+  //   );
+  // }
+};
