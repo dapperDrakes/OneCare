@@ -35,9 +35,11 @@ export default class DoctorEntry extends Component {
         <Text>Enter a new doctor!</Text>
         <ScrollView>
           <Text>Name: </Text><TextInput />
+          <Text>Specialty: </Text><TextInput />
           <Text>Phone: </Text><TextInput />
           <Text>Fax: </Text><TextInput />
           <Text>Email: </Text><TextInput />
+          <Text>Address: </Text><TextInput />
         </ScrollView>
         <ScrollView>
           <Text>Current Doctors:</Text>
