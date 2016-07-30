@@ -7,9 +7,6 @@ mongoose.connect('mongodb://onecare:onecare1>@ds031925.mlab.com:31925/onecare');
 
 var scriptSchema = new Schema({
 	name: String, // name of drug // maybe better to concat both the name and dosage for more specific lookup // 
-<<<<<<< 9d62e037233eb117d0f169985d9cad1a1c3e0bf7
-	name: String, // name of drug
-=======
 >>>>>>> configure db
 	dosage: String, // dosage ex. 30mg
 	frequency: Number, // number of times in day,week,etc.
@@ -18,7 +15,6 @@ var scriptSchema = new Schema({
 	refillRemind: Number, //reminder for refill 
 	dailyRemind: Number, //reminder for doses 
 	// User: {type: Schema.Types.ObjectId, ref: 'User'}
-	User: {type: Schema.Types.ObjectId, ref: 'User'}
 	// refers to a specific user 
 }); 
 
@@ -26,7 +22,6 @@ var userSchema = new Schema({
 	username: String,
 	password: String, 
 	// scripts: [{type: Schema.Types.ObjectId, ref: 'Script'}] // script models for user
-	scripts: [{type: Schema.Types.ObjectId, ref: 'Script'}] // script models for user
 });
 
 var doctorSchema = new Schema({
@@ -34,7 +29,6 @@ var doctorSchema = new Schema({
 	field: String,
 	address: String, 
 	// patients: [{type: Schema.Types.ObjectId, ref: 'User'}]
-	patients: [{type: Schema.Types.ObjectId, ref: 'User'}]
 }); 
 
 
