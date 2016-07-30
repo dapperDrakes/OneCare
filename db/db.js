@@ -13,21 +13,21 @@ var scriptSchema = new Schema({
 	refill: Date, // date of refill 
 	refillRemind: Number, //reminder for refill 
 	dailyRemind: Number, //reminder for doses 
-	User: {type: Schema.Types.ObjectId, ref: 'User'}
+	// User: {type: Schema.Types.ObjectId, ref: 'User'}
 	// refers to a specific user 
 }); 
 
 var userSchema = new Schema({
 	username: String,
 	password: String, 
-	scripts: [{type: Schema.Types.ObjectId, ref: 'Script'}] // script models for user
+	// scripts: [{type: Schema.Types.ObjectId, ref: 'Script'}] // script models for user
 });
 
 var doctorSchema = new Schema({
 	name: String, 
 	field: String,
 	address: String, 
-	patients: [{type: Schema.Types.ObjectId, ref: 'User'}]
+	// patients: [{type: Schema.Types.ObjectId, ref: 'User'}]
 }); 
 
 
