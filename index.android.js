@@ -9,6 +9,10 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
+
+  Image,
+  TextInput, 
+
   View
 } from 'react-native';
 import SymptomEntry from './symptomEntry';
@@ -44,7 +48,24 @@ class OneCare extends Component {
     console.log("component has mounted");
     this.fuckDan();
   }
+
+  onPressButtonGET () {
+        fetch("https://api.github.com/users/kentonlin", {method: "GET"})
+        .then((response) => response.json())
+        .then((responseData) => {
+          Alert.alert(
+          "GET Response",
+          "Search Query -> " + responseData
+          )
+           console.log("Search Query -> " + responseData)
+        })
+        .done();
+    }
+
   render() {
+    let pic = {
+      uri: 'http://www.rxyoursite.com/assets/img/rx-logo.png'
+    }; 
     return (
       <View style={styles.container}>
         <SymptomEntry />
@@ -60,17 +81,41 @@ class OneCare extends Component {
           Double tap R on your keyboard to reload,{'\n'}
           Shake or press menu button for dev menu
         </Text>
+
+        <Image source={pic} style={{width: 193, height: 110}}/>
+
+      <UserTextInput/>
+
+        <text> {this.onPressButtonGET()} </text>
       </View>
     );
   }
 }
+
+class UserTextInput extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: 'Please enter your name' };
+  }
+
+  render() {
+    return (
+      <TextInput 
+        style={{height: 40, borderColor: 'gray', borderWidth: 1}}
+        onChangeText={(text) => this.setState({text})}
+        value={this.state.text}
+      />
+    );
+  }
+}
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#ff8080',
   },
   welcome: {
     fontSize: 20,
@@ -85,3 +130,4 @@ const styles = StyleSheet.create({
 });
 
 AppRegistry.registerComponent('OneCare', () => OneCare);
+AppRegistry.registerComponent('AwesomeProject', () => UselessTextInput);
