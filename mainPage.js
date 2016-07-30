@@ -28,6 +28,10 @@ export default class MainPage extends Component {
           onPress={this.gotoSymptomEntryPage.bind(this)}>
           <Text style={{backgroundColor: 'yellow', color: 'green'}}>Enter Symptoms</Text>
         </TouchableHighlight>
+        <TouchableHighlight style={{backgroundColor: 'yellow', padding: 10}}
+          onPress={this.gotoDoctorEntryPage.bind(this)}>
+          <Text style={{backgroundColor: 'yellow', color: 'green'}}>Enter Doctors</Text>
+        </TouchableHighlight>
       </View>
     );
   }
@@ -36,6 +40,13 @@ export default class MainPage extends Component {
     this.props.navigator.push({
       id: 'SymptomEntry',
       name: 'SymptomEntry'
+    });
+  }
+
+  gotoDoctorEntryPage() {
+    this.props.navigator.push({
+      id: 'DoctorEntry',
+      name: 'DoctorEntry'
     });
   }
 }

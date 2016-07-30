@@ -1,0 +1,3 @@
+if (self.CavalryLogger) { CavalryLogger.start_js(["2aXIT"]); }
+
+__d('UnicodeBidiDirection',['Locale','UnicodeBidiDirectionCore'],function a(b,c,d,e,f,g){if(c.__markCompiled)c.__markCompiled();c('UnicodeBidiDirectionCore').initGlobalDir=function(){c('UnicodeBidiDirectionCore').setGlobalDir(c('Locale').isRTL()?c('UnicodeBidiDirectionCore').RTL:c('UnicodeBidiDirectionCore').LTR);};f.exports=c('UnicodeBidiDirectionCore');},null);

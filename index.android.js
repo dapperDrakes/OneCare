@@ -9,16 +9,25 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+<<<<<<< HEAD
+import DoctorEntry from './doctorEntry';
+=======
+import DoctorEntry from './doctorEntry'
 import SymptomEntry from './symptomEntry';
 import SplashPage from './splashPage';
 import LoginPage from './loginPage';
 import MainPage from './mainPage';
+>>>>>>> dev
 
 class OneCare extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      "ip": "10.224.144.22:3000", // REPLACE WITH YOUR OWN IP ADDRESS (everything before :3000)!
+<<<<<<< HEAD
+      "ip": "localhost:3000", // REPLACE WITH YOUR OWN IP ADDRESS (everything before :3000)!
+=======
+      "ip": "64.72.65.58:3000", // REPLACE WITH YOUR OWN IP ADDRESS (everything before :3000)!
+>>>>>>> dev
       "text": "before API Call"};
   }
   fuckDan() {
@@ -79,7 +88,7 @@ componentDidMount() {
   render() {
     return (
       <Navigator
-        initialRoute={{id: 'SplashPage', name: 'Index'}}
+        initialRoute={{id: 'MainPage', name: 'MainPage'}}
         renderScene={this.renderScene.bind(this)}
         configureScene={(route) => {
           if (route.sceneConfig) {
@@ -126,6 +135,11 @@ componentDidMount() {
       return (
         <SymptomEntry navigator={navigator} />
       );
+    }
+    if (routeId === 'DoctorEntry') {
+      return (
+        <DoctorEntry navigator={navigator} />
+      )
     }
 
     return this.noRoute(navigator);
