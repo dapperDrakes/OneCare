@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var dbHelpers = require('../db/dbhelper.js');
 var app = express();
+
 
 // app.use(express.static(__dirname + "/client"));
 app.use(express.static(__dirname + "/node_modules"));
@@ -19,3 +21,13 @@ app.get('/fuckDan', function(req, res){
   console.log('request received at /fuckDan');
   res.send(JSON.stringify({"message": "Fuck Dan"}));
 });
+
+app.post('/api/script/add', function(req, res) {
+	var newScript = req.body; 
+	dbHelpers.addScript(newScript, res); 
+}); 
+
+app.post('/api/script/find', function(req, res) {
+	var findScript = req.body; 
+	dbHelpers.getScripts( findScript, res); 
+}); 
